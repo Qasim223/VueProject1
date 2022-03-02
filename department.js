@@ -47,9 +47,15 @@ const department = {
 
     methods:{
         refeshData(){
-            axios.get(variables.API_URL + "Department", options.headers).then((response)=> {
+            axios.get(variables.API_URL + "Department", config).then((response)=> {
                 this.oData = response.data;
             })
+        }
+    },
+
+    config = {
+        headers: {
+            'Content-Type': 'application/json'
         }
     },
 
